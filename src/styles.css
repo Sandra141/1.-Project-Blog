@@ -5,7 +5,13 @@
 body {
   font-family: sans-serif;
   margin: 0;
-  height: 2000px;
+}
+
+#headerspace {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 1;
 }
 
 header {
@@ -15,12 +21,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1;
 }
 
 #logo {
-  float: left;
   margin-left: 30px;
 }
 
@@ -37,18 +43,43 @@ nav a {
   font-size: 20px;
 }
 
-a {
-  color: black;
-  text-decoration: none;
+.navtext {
+  padding-right: 40px;
+  font-size: 20px;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  background-color: rgba(255, 255, 255, 0.4);
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 7px;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.navtext:hover {color: #ddd;}
 
 #cover {
   height: 600px;
   overflow: hidden;
   position: relative;
-  top: -100px;
-  margin-bottom: -100px;
-  display: flex;
+  top: -110px;
+  margin-bottom: -110px;
 }
 
 #cover img {
@@ -68,4 +99,91 @@ h1 {
   position: absolute;
   top: calc(50% - 100px);
   left: calc(75% - 245px);
+  text-align: right;
+}
+
+#content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#articles {
+  width: 65%;
+  padding: 20px;
+  margin-left: 15%;
+  float: left;
+}
+
+section {
+  padding: 20px 0px;
+}
+
+section img {
+  height: 300px;
+}
+
+#imagetoright {
+  float: right;
+  margin: 30px 0px 30px 30px;
+}
+
+#imagetoleft {
+  float: left;
+  margin: 30px 30px 30px 0px;
+}
+
+aside {
+  width: 12%;
+  margin-right: 4%;
+}
+
+aside nav {
+  margin-top: 40px;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 7px;
+  border-width: 1px;
+  position: sticky;
+  top: 140px;
+}
+
+aside nav a {
+  display: block;
+  padding-right: 0;
+  padding-bottom: 5px;
+}
+
+footer {
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+footer nav {
+  height: 30px;
+  position: absolute;
+  z-index: 1;
+  text-align: right;
+  top: calc(50% - 15px);
+  right: 40px;
+  padding-right: 5%;
+}
+
+footer nav a {
+  color: white;
 }
